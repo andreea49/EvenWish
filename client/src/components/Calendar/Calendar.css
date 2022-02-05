@@ -1,0 +1,131 @@
+.blackParagraph{
+    background-color: black;
+    color: white;
+}
+
+.calendarList {
+    list-style-type: none;
+    padding:0;
+    margin: 0;
+}
+
+.calendarWeekdaysList {
+    list-style-type: none;
+    font-size:x-large;
+    padding-left: 0;
+    display: inline-block;
+    width: 92%;
+}
+
+.calendarWeekdaysList > li {
+    display: inline-block;
+    height: 2%;
+    width: 13.6%;
+    text-align: center;
+}
+
+.calendarList > li {
+    display: inline-block;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    width: 13.6%;
+    text-align: center;
+    font-size: x-large;  
+}
+
+.calendarList > li > button{
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    background-color: inherit;
+    padding: 0;
+    font-family: cursive;
+}
+
+.calendarList > li > button:hover{
+    background-color: #2F2504;
+    color: #D0DDD7;
+}
+    
+.tooltiptext {
+    position: static;
+    background-color: #594E36 ;
+    color: #D0DDD7;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 1;
+    left:50%;
+    width: 100%;
+}
+
+.liWithData{
+    
+    background-color: #D0DDD7;
+    width: 13.6%;
+    height: 1%;
+    padding-bottom: 0;
+    letter-spacing: 3px;
+}
+
+#today{
+    background-color: #2F2504;
+}
+
+#today > button {
+    color:white;
+}
+
+#pageContainer {
+    text-align: center;
+}
+
+#titleRow{
+    color:whitesmoke;
+}
+
+#homePage {
+    background-color: #7E846B;
+    height: calc(100vh - 56px);
+}
+
+#calendarContainer{
+    background-color: #594E36;
+    padding-top:1%;
+    padding-bottom: 3%;
+}
+
+
+#daysContainer {
+   
+}
+
+#next, #prev {
+    border: 2px solid #2F2504;
+    border-radius: 20px;
+    background-color: #D0DDD7;
+    color: #2F2504;
+}
+#next:hover, #prev:hover{
+    background-color: #2F2504;
+    color: #D0DDD7;
+    border: 2px solid #D0DDD7;
+}
+
+
+#calendarBodyContainer{
+    display: grid;
+    grid-template-columns: 3% 94% 3%;
+}
+
+#calendarBodyContainer > button{
+    padding: 0;
+    margin: 0;
+}
+
+#weekdaysContainer{
+    text-align: center;
+    position: relative;
+}
+

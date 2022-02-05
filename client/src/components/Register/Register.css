@@ -1,0 +1,53 @@
+@media only screen and (min-width: 768px){
+    
+    .registerContainer{
+        margin-left:10vw;
+        margin-right: 10vw;
+        margin-top:25vh;
+        padding: 5vh;
+        border-radius: 20px;
+        background-color: #594E36;
+        color: whitesmoke;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    
+    .registerContainer{
+        margin-top:25vh;
+        padding: 5vh;
+        border-radius: 20px;
+        background-color: #594E36;
+        color: whitesmoke;
+    }
+
+}
+
+.btn {
+    background-color: #7E846B;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #2F2504;
+    border: none;
+}
+
+.form-control {
+    background-color: #7E846B;
+    border: none;
+    color: whitesmoke;
+}
+
+.form-control:active {
+    background-color: #7E846B;
+    border: none;
+    color: whitesmoke;
+}
+
+.form-control:hover {
+    background-color: #2F2504;
+    border: none;
+    color: whitesmoke;
+}

@@ -1,0 +1,29 @@
+body {
+    background-color: #7E846B ;
+}
+
+@media only screen and (min-width: 768px){
+    
+    .loginContainer{
+        margin-left:10vw;
+        margin-right: 10vw;
+        margin-top:25vh;
+        padding: 5vh;
+        border-radius: 20px;
+        background-color: #594E36;
+        color: whitesmoke;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    
+    .loginContainer{
+        margin-top:25vh;
+        padding: 5vh;
+        border-radius: 20px;
+        background-color: #594E36;
+        color: whitesmoke;
+    }
+
+}
