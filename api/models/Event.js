@@ -1,12 +1,11 @@
-const sequelize = require("../sequelize")
+const sequelize = require("./index")
 const { DataTypes} = require("sequelize")
 
 const Event = sequelize.define("Events", {
     EventID: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
-        allowNull: true
+        autoIncrement: true
     },
 
     username: {
@@ -19,18 +18,21 @@ const Event = sequelize.define("Events", {
         allowNull: false
     },
 
-    Avatar: {
+    Location: {
         type: DataTypes.STRING,
-        allowNull: true,
-        validate: { 
-            isURL: true
-        }
+        allowNull: true
     },
 
     EventDate: {
         type:DataTypes.DATE,
         allowNull:false
+    },
+
+    EventTime: {
+        type:DataTypes.TIME,
+        allowNull:false
     }
+
 });
 
 module.exports = Event;

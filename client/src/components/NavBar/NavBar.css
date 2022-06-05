@@ -1,20 +1,25 @@
 .navigation{
     list-style-type: none;
-    background-color: #2F2504;
+    background-color: #320A28;
 }
 
 .nav-links{
    
     padding: 10px 20px;
     display: inline-block;
-    color: white;
+    color: #E0D68A;
 }
 
 .nav-a {
     text-decoration: none;
-    color: white;
+    color: #E0D68A;
 }
 
 .right{
     float: right;
 }
+
+div.dropdown-menu.show {
+    background-color: #320A28; 
+    
+  }

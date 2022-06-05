@@ -25,12 +25,11 @@ function LogIn(props) {
                 password: password
             }),
             headers: new Headers({
-                "Access-Control-Allow-Origin": "*",
                 'Content-Type': 'application/json'
             })
         }
 
-        fetch("http://localhost:3002/users/login", options)
+        fetch("/users/login", options)
         .then((response) => {
             if(response.status === 200) {
                 alert("Successfully logged in.")

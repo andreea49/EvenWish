@@ -1,5 +1,5 @@
 import "./NavBar.css"
-import { Navbar, Container, Nav } from "react-bootstrap"
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
 import { useState } from "react"
 
 function NavBar(props) {
@@ -23,11 +23,17 @@ function NavBar(props) {
             return (<>
                 <Nav className="me-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/addEvent">Add Event</Nav.Link>
+                    <Nav.Link href="/addEvent">New Event</Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link className="float-right" href="/profile">Welcome, {loggedinUser}!</Nav.Link>
-                    <Nav.Link className="float-right" onClick={onLogout}>Log out</Nav.Link>
+                    <NavDropdown className="navigation" title={loggedinUser} menuVariant="dark">
+                        <NavDropdown.Item href="/connections">Friends</NavDropdown.Item>
+                        <NavDropdown.Item href="/connreqs">Friends requests</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/profile">Settings</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item  onClick={onLogout}>Log out</NavDropdown.Item>
+                    </NavDropdown>                    
                 </Nav>
             </>)
         }
@@ -36,7 +42,7 @@ function NavBar(props) {
     return (
         <Navbar className="navigation" variant="dark" expand="lg">
             <Container>
-                <Navbar.Brand href="/">Artilendar</Navbar.Brand>
+                <Navbar.Brand href="/">EvenWish</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                 <Navbar.Collapse id="basic-navbar-nav">

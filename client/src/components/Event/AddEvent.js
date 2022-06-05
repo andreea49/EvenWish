@@ -1,30 +1,66 @@
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
-import {useState} from 'react'
-import Axios from 'axios'
-import './AddEvent.css'
+import React from "react"
+import './Event.css'
+import {checkResponseStatus} from '../Common.js'
 
-function AddEvent() {
-
-    const [description, setDescription] = useState("")
-    const [avatar, setAvatar] = useState("")
-    const [eventDate, setEventDate] = useState("")
-    const [username, setUsername] = useState(localStorage.getItem('username'))
-    var axios = Axios.create();
-
-    function addEvent() {
-        const event = {
-            username: username,
-            Description: description,
-            Avatar: avatar,
-            EventDate: eventDate
-        }
-        axios.post("http://localhost:3002/events/", event).then((response) => {
-            if(response.satus === 200){
-                alert("Successfully added event.")
-            }
-        })
+class AddEvent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {description: "", location: "", eventDate: "", eventTime: ""};
+        this.handleTextDescriptionChange = this.handleTextDescriptionChange.bind(this);
+        this.handleTextLocationChange = this.handleTextLocationChange.bind(this);
+        this.handleDateChange = this.handleDateChange.bind(this);
+        this.handleTimeChange = this.handleTimeChange.bind(this);
+        this.addEvent = this.addEvent.bind(this);
     }
 
+    handleTextDescriptionChange(event) {
+        this.setState({description: event.target.value});
+    }
+
+    handleTextLocationChange(event) {
+        this.setState({location: event.target.value});
+    }
+
+    handleDateChange(event) {
+        this.setState({eventDate: event.target.value});
+    }
+
+    handleTimeChange(event) {
+        console.log(event.target.value);
+        this.setState({eventTime: event.target.value});
+    }
+
+    addEvent() {
+        const options = {
+            method : "POST",
+            body: JSON.stringify({
+                username: localStorage.getItem("username"),
+                Description: this.state.description,
+                Location: this.state.location,
+                EventDate: this.state.eventDate,
+                EventTime: this.state.eventTime
+            }),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }
+
+        fetch("/events/add", options)
+            .then(checkResponseStatus)
+            .then(res => res.json())
+            .then(json => {
+                console.log("/events/add returned %O", json);
+                this.state.content = json;
+                this.setState({});
+            })
+            .catch(err => {
+                console.log("/events/add errored %O", err);
+                alert(err);
+            });
+    };
+
+  render() {
     return (<>
         <Container>
             <Row>
@@ -36,18 +72,21 @@ function AddEvent() {
                         <Form>
                             <Form.Group>
                                 <Form.Label>Description</Form.Label>
-                                <Form.Control type="text" placeholder="Enter description:" value={description} onChange = {(e) => setDescription(e.target.value)}/>
+                                <Form.Control type="text" placeholder="Enter description:" value={this.state.description} onChange = {this.handleTextDescriptionChange}/>
                             </Form.Group>
                             <Form.Group className='mt-3 mb-3'>
-                                <Form.Label>Avatar link</Form.Label>
-                                <Form.Control type="text" placeholder="Enter a valid image link:" value={avatar} onChange = {(e) => setAvatar(e.target.value)}/>
+                                <Form.Label>Location</Form.Label>
+                                <Form.Control type="text" placeholder="Enter location" value={this.state.location} onChange = {this.handleTextLocationChange}/>
                             </Form.Group>
                             <Form.Group className='mt-3 mb-3'>
-                                <Form.Label>Date and time: </Form.Label>
-                                <Form.Control type="text" placeholder="Enter the event's date:" value={eventDate} onChange = {(e) => setEventDate(e.target.value)}/>
-                                <Form.Text style={{color: 'white'}}>Example: 2022-01-31 12:25:01</Form.Text>
+                                <Form.Label>Date: </Form.Label>
+                                <Form.Control type="date" value={this.state.eventDate} onChange = {this.handleDateChange}/>
                             </Form.Group>
-                            <Button className="mt-3" type="submit" onClick={addEvent}>Add event</Button>
+                            <Form.Group className='mt-3 mb-3'>
+                                <Form.Label>Time: </Form.Label>
+                                <Form.Control type="time" value={this.state.eventTime} onChange = {this.handleTimeChange}/>
+                            </Form.Group>
+                            <Button className="mt-3" onClick={this.addEvent}>Add event</Button>
                         </Form>
                     </div>
                 </Col>
@@ -56,6 +95,6 @@ function AddEvent() {
             </Row>
         </Container>
     </>)
+  };
 }
-
 export default AddEvent;

@@ -21,12 +21,11 @@ function Register() {
                 password: password
             }),
             headers: new Headers({
-                "Access-Control-Allow-Origin": "*",
                 'Content-Type': 'application/json'
             })
         }
 
-        fetch("http://localhost:3002/users/register", options)
+        fetch("/users/register", options)
         .then((response) => {
             if(response.status === 200) {
                 alert("Registered.")

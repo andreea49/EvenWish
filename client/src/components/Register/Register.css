@@ -6,8 +6,8 @@
         margin-top:25vh;
         padding: 5vh;
         border-radius: 20px;
-        background-color: #594E36;
-        color: whitesmoke;
+        background-color: #8E443D;
+        color: #E0D68A;
     }
 
 }
@@ -18,36 +18,36 @@
         margin-top:25vh;
         padding: 5vh;
         border-radius: 20px;
-        background-color: #594E36;
-        color: whitesmoke;
+        background-color: #8E443D;
+        color: #E0D68A;
     }
 
 }
 
 .btn {
-    background-color: #7E846B;
+    background-color: #511730;
     border: none;
 }
 
 .btn:hover{
-    background-color: #2F2504;
+    background-color: #320A28;
     border: none;
 }
 
 .form-control {
-    background-color: #7E846B;
+    background-color: #511730;
     border: none;
-    color: whitesmoke;
+    color: #E0D68A;
 }
 
 .form-control:active {
-    background-color: #7E846B;
+    background-color: #511730;
     border: none;
-    color: whitesmoke;
+    color: #E0D68A;
 }
 
 .form-control:hover {
-    background-color: #2F2504;
+    background-color: #320A28;
     border: none;
-    color: whitesmoke;
+    color: #E0D68A;
 }

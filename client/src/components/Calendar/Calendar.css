@@ -1,6 +1,6 @@
 .blackParagraph{
     background-color: black;
-    color: white;
+    color: #E0D68A;
 }
 
 .calendarList {
@@ -45,14 +45,16 @@
 }
 
 .calendarList > li > button:hover{
-    background-color: #2F2504;
-    color: #D0DDD7;
+    background-color: #320A28;
+    color: #E0D68A;
+    width: 35px;
+    height: 35px;
 }
     
 .tooltiptext {
     position: static;
-    background-color: #594E36 ;
-    color: #D0DDD7;
+    background-color: #CB9173 ;
+    color: #E0D68A;
     text-align: center;
     padding: 5px 0;
     z-index: 1;
@@ -62,7 +64,7 @@
 
 .liWithData{
     
-    background-color: #D0DDD7;
+    background-color: #E0D68A;
     width: 13.6%;
     height: 1%;
     padding-bottom: 0;
@@ -70,11 +72,12 @@
 }
 
 #today{
-    background-color: #2F2504;
+    background-color: #320A28;
+    border-radius: 0px;
 }
 
 #today > button {
-    color:white;
+    color:#E0D68A;
 }
 
 #pageContainer {
@@ -82,16 +85,16 @@
 }
 
 #titleRow{
-    color:whitesmoke;
+    color:#E0D68A;
 }
 
 #homePage {
-    background-color: #7E846B;
+    background-color: #511730;
     height: calc(100vh - 56px);
 }
 
 #calendarContainer{
-    background-color: #594E36;
+    background-color: #CB9173;
     padding-top:1%;
     padding-bottom: 3%;
 }
@@ -102,15 +105,15 @@
 }
 
 #next, #prev {
-    border: 2px solid #2F2504;
+    border: 2px solid #320A28;
     border-radius: 20px;
-    background-color: #D0DDD7;
-    color: #2F2504;
+    background-color: #E0D68A;
+    color: #320A28;
 }
 #next:hover, #prev:hover{
-    background-color: #2F2504;
-    color: #D0DDD7;
-    border: 2px solid #D0DDD7;
+    background-color: #320A28;
+    color: #E0D68A;
+    border: 2px solid #E0D68A;
 }
 
 
